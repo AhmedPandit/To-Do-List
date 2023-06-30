@@ -1,0 +1,13 @@
+input {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    background-color: transparent; /* Set the background color to transparent */
+    @media (max-width: 480px) {
+      margin-top: 10px;
+      
+    }
+  }

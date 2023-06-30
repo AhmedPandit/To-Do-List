@@ -1,0 +1,96 @@
+.task {
+  background-color: rgba(255, 255, 255, 0.637); /* Use an rgba value to create a transparent background with some opacity */
+  backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+  border: none;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+
+  @media (max-width: 480px) {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+  }
+}
+
+.task:hover {
+  background-color: rgba(255, 255, 255, 0.451); /* Adjust the opacity on hover for a subtle effect */
+}
+
+.task span {
+  color: black;
+}
+
+.icon {
+  float: right;
+  margin-right: 20px;
+  
+  transition: transform 0.3s ease;
+  @media (max-width: 480px) {
+    margin-top: 10px;
+    margin-right: 5px;
+   
+  }
+}
+
+.iconmain {
+  float: right;
+  margin-right: 20px;
+  
+  transition: transform 0.3s ease;
+  @media (max-width: 480px) {
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+}
+.dropdown {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 8px;
+  z-index: 1;
+  
+}
+
+.dropdown .icon {
+  display: block;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+.dropdown .cancel {
+  float: right;
+  margin-right: 20px;
+  margin-top: 8px;
+  color: red;
+}
+
+.button{
+  background-color: rgba(255, 255, 255, 0.24); /* Use an rgba value to create a transparent background with some opacity */
+  backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+  border: none;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Adjust the opacity on hover for a subtle effect */
+}
+
+.button.selected{
+
+  background-color: rgb(255, 255, 255);
+  
+}

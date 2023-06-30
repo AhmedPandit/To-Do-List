@@ -1,0 +1,12 @@
+header{
+    text-align: center;
+}
+
+header h1{
+    font-size: 80px;
+    font-weight: 400;
+    color: white;
+    background-color: rgba(255, 255, 255, 0); /* Use an rgba value to create a transparent background with some opacity */
+    backdrop-filter: blur(2px); /* Apply a blur effect to the background */
+    
+}
