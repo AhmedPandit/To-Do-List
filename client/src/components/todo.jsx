@@ -13,6 +13,7 @@ import { PiDotsSixVerticalBold } from "react-icons/pi";
 const Todo = ({ todo }) => {
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState(todo?.data);
+
   const [showDropdown, setShowDropdown] = useState(false);
 
   const dispatch = useDispatch();
@@ -44,7 +45,11 @@ const Todo = ({ todo }) => {
     <div
       className="task"
       data-testid="todo-test"
-      style={{ paddingBottom: editing ? "40px" : "10px" }}
+      style={{
+        paddingBottom: editing ? "40px" : "10px",
+        display: "flex",
+        flexDirection: "row",
+      }}
     >
       {todo?.done ? (
         <CheckCircleIcon
@@ -69,7 +74,14 @@ const Todo = ({ todo }) => {
         />
       )}
 
-      <span style={{ display: editing ? "none" : "" }}>{todo?.heading}</span>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <span style={{ marginRight: "5px" }}>{todo?.heading}</span>
+        {todo?.done && (
+          <p style={{ color: "green", fontSize: "12px" }}>
+            Completed Time {todo.comptime}
+          </p>
+        )}
+      </div>
 
       <form
         style={{ display: editing ? "inline" : "none" }}

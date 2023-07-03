@@ -15,6 +15,10 @@ app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
 app.use("/todos", ITEMRouter);
 
 const CONNECTION_URL="mongodb+srv://Ahmedfinal:mongoahmed@cluster0.z4cri4u.mongodb.net/TodoList";
+// "mongodb://mongodb:27017/new-docker-db"
+// "mongodb+srv://Ahmedfinal:mongoahmed@cluster0.z4cri4u.mongodb.net/TodoList";
+
+
 const PORT=process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL,{useNewUrlParser:true,useUnifiedTopology:true})

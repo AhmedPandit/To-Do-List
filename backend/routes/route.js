@@ -26,25 +26,55 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get('/:id',async (request,response)=>{
+router.get('/:id', async (request, response) => {
   try {
     console.log(request.params.id);
+
+    let date_ob = new Date();
+
+    // current date
+    // adjust 0 before single digit date
+    let date = ("0" + date_ob.getDate()).slice(-2);
+
+    // current month
+    let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+
+    // current year
+    let year = date_ob.getFullYear();
+
+    // current hours
+    let hours = date_ob.getHours();
+
+    // current minutes
+    let minutes = date_ob.getMinutes();
+
+    // current seconds
+    let seconds = date_ob.getSeconds();
+
+    // prints date & time in YYYY-MM-DD HH:MM:SS format
+    let completedTime = year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
+
+    console.log(completedTime);
+
     const todoRef = await LIST.findById(request.params.id);
 
     const todo = await LIST.findOneAndUpdate(
-        { _id: request.params.id },
-        { done: !todoRef.done }
-    )
+      { _id: request.params.id },
+      {
+        done: !todoRef.done,
+        comptime: todoRef.done ? null : completedTime, // Set comptime to null if the task is marked as not done
+      },
+      { new: true } // Return the updated document
+    );
 
-   
-
-    await todo.save();
+    console.log(todo);
 
     return response.status(200).json(todo);
-} catch (error) {
+  } catch (error) {
     return response.status(500).json(error.message);
-}
+  }
 });
+
 
 router.delete("/deleteitem/:id", async (req, res) => {
   try {

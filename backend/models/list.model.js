@@ -14,7 +14,8 @@ const LIST = new mongoose.Schema({
     default:false
   },
   comptime: {
-    type: Date,
+    type: "String",
+
   },
 });
 
