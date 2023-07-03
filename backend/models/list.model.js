@@ -6,8 +6,7 @@ const LIST = new mongoose.Schema({
     required: true,
   },
   creation: {
-    type: Date,
-    default: Date.now,
+    type: "String"
   },
   done:{
     type:Boolean,

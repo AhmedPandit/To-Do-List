@@ -74,13 +74,18 @@ const Todo = ({ todo }) => {
         />
       )}
 
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <span style={{ marginRight: "5px" }}>{todo?.heading}</span>
         {todo?.done && (
-          <p style={{ color: "green", fontSize: "12px" }}>
+          <p style={{ color: "green", fontSize: "12px", textAlign: "left" }}>
             Completed Time {todo.comptime}
           </p>
         )}
+
+        {/* Add creation time */}
+        <p style={{ color: "blue", fontSize: "12px", textAlign: "left" }}>
+          Created Time {todo.creation}
+        </p>
       </div>
 
       <form
